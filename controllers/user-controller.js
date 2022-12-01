@@ -11,7 +11,7 @@ module.exports.signinSignup = async (req, res) => {
 
     // if esesist -> login
     if (user && user.password == req.body.password) {
-        res.cookie('user_id', userEmail._id)
+        res.cookie('user_id', user._id)
     }
     else if(user && user.password != req.body.password) {
         return res.render('signin',{
